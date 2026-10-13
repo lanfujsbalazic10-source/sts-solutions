@@ -35,7 +35,6 @@ export type ContactSubmission = {
 };
 
 export const AUTH_COOKIE_NAME = "sts-admin-auth";
-export const DEFAULT_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "stsadmin";
 
 export const defaultSiteContent: SiteContent = {
   companyName: "STS SOLUTIONS",

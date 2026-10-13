@@ -23,14 +23,12 @@ ADMIN_PASSWORD=stsadmin
 
 ## Production deployment
 
-This project is ready for deployment to Vercel.
+The project uses Supabase for persistent production storage and Vercel for hosting.
 
-1. Copy `.env.local.example` to `.env.local`
-2. Set a secure `ADMIN_PASSWORD`
-3. Push the repo to GitHub
-4. Import the repo into Vercel
-5. Add the `ADMIN_PASSWORD` environment variable in Vercel
-6. Connect the domain `sts-solutions.com`
+1. Create a Supabase project and run `supabase/schema.sql` in its SQL Editor.
+2. Import `lanfujsbalazic10-source/sts-solutions` into Vercel.
+3. Add `ADMIN_PASSWORD`, `SUPABASE_URL`, and `SUPABASE_SERVICE_ROLE_KEY` in Vercel's project environment variables.
+4. Deploy and connect `sts-solutions.com`.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for the full step-by-step guide.
 

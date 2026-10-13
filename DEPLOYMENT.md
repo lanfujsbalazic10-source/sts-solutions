@@ -1,55 +1,56 @@
 # STS Solutions deployment guide
 
-## 1. Prepare the environment
+## 1. Create the Supabase database
 
-Create a local file named `.env.local` from `.env.local.example` and set a secure admin password:
+1. Create a Supabase project at https://supabase.com.
+2. Open the project's SQL Editor.
+3. Run the SQL in `supabase/schema.sql`.
+4. In Project Settings > API, copy the project URL and the server-side service role key.
+
+The service role key bypasses row-level security. Keep it private: never put it in frontend code, never prefix it with `NEXT_PUBLIC_`, and never commit it.
+
+## 2. Configure local development (optional)
+
+Create `.env.local` from the template:
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-Then update the value:
+Set these values in `.env.local`:
 
 ```env
-ADMIN_PASSWORD=your_secure_password_here
-NODE_ENV=production
+ADMIN_PASSWORD=use_a_long_unique_password
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_server_only_key
 ```
 
-## 2. Push the project to GitHub
+Restart the development server after changing environment variables. When Supabase variables are omitted in development, the app uses the local JSON fallback. Production requires both Supabase variables.
 
-Create a GitHub repository and push the app there.
+## 3. Deploy from GitHub to Vercel
 
-## 3. Deploy on Vercel
+The repository is `lanfujsbalazic10-source/sts-solutions`.
 
-1. Open https://vercel.com
-2. Sign in to your account
-3. Import the GitHub repository
-4. Keep the default Next.js setup
-5. Add the environment variable:
-   - `ADMIN_PASSWORD`
-6. Deploy
+1. Sign in at https://vercel.com.
+2. Add a new project and import the GitHub repository above.
+3. Keep the default Next.js build settings.
+4. In Project Settings > Environment Variables, add `ADMIN_PASSWORD`, `SUPABASE_URL`, and `SUPABASE_SERVICE_ROLE_KEY` for Production (and Preview if needed).
+5. Deploy or redeploy after adding the variables.
 
-## 4. Add the domain
+Use a unique, strong admin password. Do not reuse the old local demo password.
 
-In Vercel:
+## 4. Connect the domain
 
-1. Open the project
-2. Go to Settings > Domains
-3. Add `sts-solutions.com`
-4. Update DNS records as instructed by Vercel
+In Vercel, open Project Settings > Domains, add `sts-solutions.com`, and apply the DNS records Vercel displays at the domain registrar.
 
-## 5. Final live checks
+## 5. Verify production
 
-- homepage loads
-- admin login works
-- content editor saves
-- contact form works
+- Homepage loads on the Vercel URL.
+- `/admin/login` accepts the configured `ADMIN_PASSWORD`.
+- Admin changes remain after a redeploy.
+- Contact submissions are stored in the Supabase `contact_submissions` table.
 
-## Admin login
-
-Use the same value you set for `ADMIN_PASSWORD`.
-
-Example:
+Admin login path:
 
 ```text
 https://sts-solutions.com/admin/login
