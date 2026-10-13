@@ -1,0 +1,75 @@
+{
+  "companyName": "STS SOLUTIONS",
+  "heroTitle": "Smart business solutions built for real growth.",
+  "heroText": "STS SOLUTIONS d.o.o. is a Slovenian company helping businesses move forward through practical services in IT, trade, production, construction support, and consulting.",
+  "email": "stsslovenija@gmail.com",
+  "phone": "+386 40 123 456",
+  "location": "Limbuška cesta 169, 2000 Maribor, Slovenija",
+  "companyStats": [
+    {
+      "value": "2019",
+      "label": "registered in Slovenia"
+    },
+    {
+      "value": "SI 35332751",
+      "label": "company registration"
+    },
+    {
+      "value": "Horvat Jan",
+      "label": "director"
+    },
+    {
+      "value": "Maribor",
+      "label": "business base"
+    }
+  ],
+  "services": [
+    {
+      "id": "01 / DIGITAL",
+      "title": "IT & digital services",
+      "text": "Technical support and digital modernization that improve everyday business performance."
+    },
+    {
+      "id": "02 / TRADE",
+      "title": "Commercial support",
+      "text": "Commercial coordination and service delivery for clients who need efficient business-to-business support."
+    },
+    {
+      "id": "03 / PRODUCTION",
+      "title": "Production & operations",
+      "text": "Operational support that keeps production activity consistent, quality-focused, and dependable."
+    },
+    {
+      "id": "04 / CONSTRUCTION",
+      "title": "Construction support",
+      "text": "Project support for construction-related work where planning, coordination, and execution matter."
+    },
+    {
+      "id": "05 / CONSULTING",
+      "title": "Business consulting",
+      "text": "Clear advice for companies seeking better decisions, stronger systems, and a stable growth path."
+    },
+    {
+      "id": "06 / DELIVERY",
+      "title": "Reliable execution",
+      "text": "Dependable communication and follow-through for clients who prioritize results and trust."
+    }
+  ],
+  "revenue": [
+    {
+      "year": "2023",
+      "value": "€299,608.86",
+      "text": "Total revenue in the first period of the current growth trend."
+    },
+    {
+      "year": "2024",
+      "value": "€421,282.84",
+      "text": "Higher annual turnover reflecting stronger business activity."
+    },
+    {
+      "year": "2025",
+      "value": "€705,058.81",
+      "text": "Strongest recent annual revenue result, confirming continued expansion."
+    }
+  ]
+}
