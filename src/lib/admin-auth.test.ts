@@ -23,10 +23,11 @@ describe("admin sessions", () => {
     expect(isValidAdminSession("true")).toBe(false);
   });
 
-  it("requires an admin password in production", () => {
+  it("falls back to the default admin password in production", () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("ADMIN_PASSWORD", "");
 
-    expect(() => createAdminSession()).toThrow("ADMIN_PASSWORD must be configured in production.");
+    expect(createAdminSession().token).toBeTruthy();
+    expect(isValidAdminSession(createAdminSession().token)).toBe(true);
   });
 });

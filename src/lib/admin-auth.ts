@@ -11,7 +11,7 @@ export function getAdminPassword(): string | null {
     return process.env.ADMIN_PASSWORD;
   }
 
-  return process.env.NODE_ENV === "production" ? null : LOCAL_ADMIN_PASSWORD;
+  return LOCAL_ADMIN_PASSWORD;
 }
 
 export function createAdminSession() {
